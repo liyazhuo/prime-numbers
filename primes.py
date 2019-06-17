@@ -1,8 +1,8 @@
-
+from functions import mul_order
 #The algorithm used here is "Sieve of Eratosthenes"
 #See https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-def primes(number):
+def primes_sieve(number):
     isprime = (number+1)*[True]
     for n in range (2,number+1):
         if isprime[n] == True:
@@ -10,6 +10,17 @@ def primes(number):
                 isprime[i]= False
     return isprime[-1]
 
-num_input = int(input("Please input an positive integer: "))
-#print (primes(3434351))
-print (primes(num_input))
+def primes_aks(number):
+    r = 2
+    while r > 0:
+        if mul_order(r, number)>16:
+            return r
+        else:
+            r = r+1
+
+
+if __name__ == "__main__":
+    #num_input = int(input("Please input an positive integer: "))
+    #print (primes(3434351))
+    #print (primes_sieve(num_input))
+    print (primes_aks(31))
