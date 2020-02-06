@@ -18,9 +18,11 @@ def primes_aks(number):
         else:
             r = r+1
 
+def test(number):
+    return mul_order(number, 7)
 
 if __name__ == "__main__":
     #num_input = int(input("Please input an positive integer: "))
     #print (primes(3434351))
     #print (primes_sieve(num_input))
-    print (primes_aks(31))
+    print (test(8))
